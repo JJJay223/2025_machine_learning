@@ -8,11 +8,17 @@
 (Feedforward Neural Network) in (3.1) and (3.2)：
 
 - **輸入層 [0]**：
-  $$ a^{[0]} = x $$
+  $$
+  a^{[0]} = x
+  $$
 
 - **逐層計算 (l = 1, 2, ..., L)**：
-  $$ z^{[l]} = W^{[l]}a^{[l-1]} + b^{[l]} \quad (3.1) $$
-  $$ a^{[l]} = \sigma(z^{[l]}) \quad (3.2) $$
+  $$
+  z^{[l]} = W^{[l]}a^{[l-1]} + b^{[l]} \quad (3.1)
+  $$
+  $$
+  a^{[l]} = \sigma(z^{[l]}) \quad (3.2)
+  $$
 
 其中：
 - $L$：總層數。
@@ -33,8 +39,12 @@
 
 1.  **初始化**：設定 $a^{[0]} = x$。
 2.  **迭代計算**：對於 $l = 1, 2, \dots, L$，依序計算並儲存：
-    $$z^{[l]} = W^{[l]}a^{[l-1]} + b^{[l]}$$
-    $$a^{[l]} = \sigma(z^{[l]})$$
+    $$
+    z^{[l]} = W^{[l]}a^{[l-1]} + b^{[l]}
+    $$
+    $$
+    a^{[l]} = \sigma(z^{[l]})
+    $$
 
 這些儲存下來的中間值會在反向傳播階段被使用。
 
@@ -54,14 +64,12 @@
     $$
     g^{[l-1]} = (W^{[l]})^T (g^{[l]} \odot \sigma'(z^{[l]}))
     $$
-    其中 $\odot$ 代表 Hadamard Product (逐元素乘積)。
+    其中 $\odot$ 代表 Hadamard Product。
 
 3.  **最終結果**：當迭代完成後，得到 $g^{[0]}$，即為所求的梯度：
     $$
     \nabla_{x} a^{[L]}(x) = g^{[0]}
     $$
-
-
 
 # 2.There are unanswered questions during the lecture, and there are likely more questions we haven't covered. Take a moment to think about them and write them down here.
 
